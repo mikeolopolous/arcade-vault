@@ -1,6 +1,6 @@
 # SPEC 02 — Página de inicio (Home) de Arcade Vault
 
-> **Estado:** Aprobado
+> **Estado:** Implementado
 > **Depende de:** SPEC 01 (`01-mvp-pantallas-visuales.md`: nav, sesión, `lib/data.ts`, estilos base y Biblioteca)
 > **Fecha:** 2026-11-24
 > **Objetivo:** Portar la landing de `references/templates/home-about/home.jsx` a la ruta `/` y mover la Biblioteca a `/biblioteca`.
