@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
-import { AuthForm } from "@/components/auth-form";
+import { Suspense } from "react";
+import { AuthForm, AuthFormFromParams } from "@/components/auth-form";
 
 export const metadata: Metadata = {
   title: "Acceso · Arcade Vault",
@@ -7,5 +8,9 @@ export const metadata: Metadata = {
 };
 
 export default function AccessPage() {
-  return <AuthForm />;
+  return (
+    <Suspense fallback={<AuthForm />}>
+      <AuthFormFromParams />
+    </Suspense>
+  );
 }

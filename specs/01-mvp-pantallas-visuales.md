@@ -1,6 +1,6 @@
 # SPEC 01 — MVP visual de Arcade Vault (5 pantallas)
 
-> **Estado:** Aprobado
+> **Estado:** Implementado
 > **Depende de:** Ninguna (el tema y las fuentes ya están en `app/globals.css` y `app/layout.tsx` desde el commit `54deac0`)
 > **Fecha:** 2026-11-20
 > **Objetivo:** Implementar en Next.js las cinco pantallas de `references/templates/` (biblioteca, detalle, reproductor simulado, acceso y salón de la fama) como MVP solo visual, sin ningún juego real.

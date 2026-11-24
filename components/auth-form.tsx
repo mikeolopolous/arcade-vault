@@ -1,13 +1,21 @@
 "use client";
 
 import { useState, type FormEvent } from "react";
-import { useRouter } from "next/navigation";
+import { useRouter, useSearchParams } from "next/navigation";
 import { useSession } from "@/lib/session";
 
-export function AuthForm() {
+type AuthTab = "in" | "up";
+
+/** Lee `?modo=registro` y abre la pestaña "CREAR CUENTA". Requiere un `<Suspense>` padre. */
+export function AuthFormFromParams() {
+  const modo = useSearchParams().get("modo");
+  return <AuthForm initialTab={modo === "registro" ? "up" : "in"} />;
+}
+
+export function AuthForm({ initialTab = "in" }: { initialTab?: AuthTab }) {
   const router = useRouter();
   const { login } = useSession();
-  const [tab, setTab] = useState<"in" | "up">("in");
+  const [tab, setTab] = useState<AuthTab>(initialTab);
   const [user, setUser] = useState("");
   const [pass, setPass] = useState("");
   const [email, setEmail] = useState("");
